@@ -153,7 +153,7 @@
         function setLink(sourceId) {
             //document.getElementById("link").href = document.getElementById(sourceId).href;
             //document.getElementById("link").innerText = document.getElementById(sourceId).innerText;
-            $("#link").load("/python-list.html #"+sourceId);
+            $("#link").load("./python-list.html #"+sourceId);
         }
         document.getElementById("tip").innerHTML = "检测到您正在在 " + ua.os.name + " 系统上使用 " + ua.browser.name + " " + ua.browser.major + " 浏览器，处理器架构为 " + ua.cpu.architecture;
         switch (ua.os.name) {
@@ -180,7 +180,7 @@
     </script>
     <script>
         $(document).ready(function(){
-            $('#guload').load('/python-list.html');
+            $('#guload').load('./python-list.html');
         })
         getpage();
     </script>
