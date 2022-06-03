@@ -6,79 +6,156 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Python 下载</title>
+    <script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js" type="application/javascript"></script>
+    <!--     Fonts and icons     -->
+    <!-- link href="https://fonts.geekzu.org/css?family=Open+Sans:300,400,600,700" rel="stylesheet" / -->
+    <link href="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css" type="text/css" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link id="pagestyle" href="../css/argon-dashboard.min.css?v=2.0.0" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/gdt.css">
+    <link rel="stylesheet" href="../css/spinkit.min.css">
+    <link rel="icon" href="../img/favicon.png">
+    <style>
+
+    @media only screen and (min-width: 1024px){
+        .title{
+            color: #fff;
+            width:max-content;
+            margin-top: 4px;
+            margin-left: -10px;
+        }
+        .python-font{
+            font-size: 50px;
+            color: #fff;
+        }
+        .gu-zhu{
+              height: 400px;
+              overflow-y: scroll;
+            }
+    }
+    @media only screen and (max-width: 1023px) {
+        .title{
+            color: #fff;
+            width:max-content;
+            margin-top: 4px;
+            margin-left: -10px;
+        }
+        .python-font{
+            font-size: 50px;
+            color: #fff;
+        }
+        .gu-zhu{
+              height: 500px;
+              overflow-y: scroll;
+        }
+    }
+
+    @media only screen and (max-width: 576px) {
+        .title{
+            color: #fff;
+            width:max-content
+        }
+        .python-font{
+            display:none;
+        }
+        .gu-zhu{
+              height: 500px;
+              overflow-y: scroll;
+            }
+
+    }
+    </style>
 </head>
 
-<body style="text-align: center;">
+<body>
     <header>
-        <h1>Python 下载</h1>
-        <p>选择合适您的系统的最新版本的 Python!</p>
-        <section id="recommand" style="display: none;">
-            <h2>推荐下载</h2>
-            <p id="tip">正在加载...</p>
-            <p>推荐您下载使用以下版本的 Python:</p>
-            <a id="link" target="_blank" href="">正在加载......</a>
-        </section>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container" style="margin-left: -10px;margin-top: 2px;">
+                <div class="row">
+                    <div class="col-sm">
+                        <i class="fab fa-python python-font"></i>
+                      </div>
+                      <div class="col-sm">
+                        <h3 class="title">Python 下载</h3>
+                      </div>
+                </div>
+            </div>
+        </nav>
+
+            <h3 style="text-align: center;margin: 10px;"><i class="fas fa-grin-squint" style="margin: 10px;"></i>选择合适您的系统的最新版本的 Python!!!</h3>
     </header>
     <main>
-        <h2>全部下载</h2>
-        <section>
-            <h4>Microsoft Windows 10 及以上</h4>
-            <p>适用于 Windows 8.1 / Windows 10 / Windows 11 64 位电脑使用</p>
-            <p>2015 年及更新的电脑应使用这个版本</p>
-            <span>下载链接：</span>
-            <a id="win10x64" target="_blank"
-                href="https://mirror.bjtu.edu.cn/python/3.10.4/python-3.10.4-amd64.exe">python-3.10.4-amd64.exe</a>
-        </section>
-        <section>
-            <h4>Microsoft Windows 7 64 位</h4>
-            <p>适用于 Windows 7 64 位 / 内存 4GB 及以上电脑使用</p>
-            <span>下载链接：</span>
-            <a id="win7x64" target="_blank"
-                href="https://mirror.bjtu.edu.cn/python/3.8.10/python-3.8.10-amd64.exe">python-3.8.10-amd64.exe</a>
-        </section>
-        <section>
-            <h4>Microsoft Windows 7 32 位</h4>
-            <p>适用于 Windows 7 32 位 / 内存 2GB 及以下电脑使用</p>
-            <span>下载链接：</span>
-            <a id="win7x32" target="_blank"
-                href="https://mirror.bjtu.edu.cn/python/3.8.10/python-3.8.10.exe">python-3.8.10.exe</a>
-        </section>
-        <section>
-            <h4>Apple macOS Universal2</h4>
-            <p>适用于 Apple MacBook (Air/Pro) / iMac / Mac mini / Mac Studio 等使用</p>
-            <p>Intel 芯片和 Apple M1 (Pro/Max/Ultra) 芯片 均可使用</p>
-            <span>下载链接：</span>
-            <a id="apple" target="_blank"
-                href="https://mirror.bjtu.edu.cn/python/3.10.4/python-3.10.4-macos11.pkg">python-3.10.4-macos11.pkg</a>
-        </section>
-        <section>
-            <h4>GNU Linux</h4>
-            <p>Python预装在大多数Linux发行版上，所以您大概率不需要单独安装。</p>
-            <p>如果您使用的发行版不自带Python，请查阅您使用的发行版的文档手册</p>
-            <p>如果您需要从源代码编译，请下载源代码，解压到目录后使用以下命令编译并安装：</p>
-            <pre>
-./configure
-make
-make install</pre>
-            <span>下载链接：</span>
-            <a id="linux" target="_blank"
-                href="https://mirror.bjtu.edu.cn/python/3.10.4/Python-3.10.4.tar.xz">Python-3.8.10.tar.xz</a>
-        </section>
+        <div class="container">
+            <div class="row">
+              <div class="col">
+                <div class="card col-sm">
+                  <section id="recommand">
+                    <h2 style="margin-left: 10px;margin-top: 10px;margin-bottom: -5px;">
+                      <i class="fas fa-thumbs-up" style="margin: 10px;">
+                      </i>推荐下载</h2>
+                    <hr>
+                    <p id="tip" style="margin: 10px;">正在加载...</p>
+                    <div class="row">
+                      <div class="col-md-auto">
+                        <p style="margin: 10px;margin-right: -30px;">推荐您下载使用以下版本的 Python:</p>
+                      </div>
+                      <div class="col-md-auto" style="margin: 10px;margin-top:2.5mm">
+                        <a id="link" target="_blank" href="">正在加载......</a>
+                      </div>
+                    </div>
+                    <div style="height: 10px;">
+                    </div>
+                  </section>
+                </div>
+                <div class="col-sm  card" style="margin-top: 10px;">
+                  <h2 style="margin-left: 10px;margin-bottom: -5px;margin-top: 10px;">
+                    <i class="fas fa-cloud-download-alt" style="margin: 10px;">
+                    </i>全部下载</h2>
+                  <hr>
+                  <div class="gu-zhu text-muted" style="margin-top: -14px;margin-left: 10px;">
+                    <div id="guload">
+                        <div class="sk-circle" style="margin: 20px;">
+                            <div class="sk-circle-dot"></div>
+                            <div class="sk-circle-dot"></div>
+                            <div class="sk-circle-dot"></div>
+                            <div class="sk-circle-dot"></div>
+                            <div class="sk-circle-dot"></div>
+                            <div class="sk-circle-dot"></div>
+                            <div class="sk-circle-dot"></div>
+                            <div class="sk-circle-dot"></div>
+                            <div class="sk-circle-dot"></div>
+                            <div class="sk-circle-dot"></div>
+                            <div class="sk-circle-dot"></div>
+                            <div class="sk-circle-dot"></div>
+                          </div>
+                    </div>
+                    <div style="height: 10px;">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
     </main>
-    <footer style="color: gray;">
-        <p>Copyright ©2021 Tim-Paik</p>
+    <footer style="color: gray;text-align: center;margin-top: 10px;">
+        <p>Copyright ©2022 Tim-Paik&咕谷酱</p>
         <p>下载链接由 <a style="color: gray;" href="https://mirror.bjtu.edu.cn/">北京交通大学自由与开源软件镜像站</a> 提供</p>
     </footer>
-    <script src="./ua-parser.min.js"></script>
+
+
+
+    <script src="./js/ua-parser.min.js"></script>
     <script>
+        function getpage() {
         var ua = UAParser();
         console.log(ua);
-        document.getElementById("tip").innerHTML = "检测到您正在在 " + ua.os.name + " 系统上使用 " + ua.browser.name + " " + ua.browser.major + " 浏览器，处理器架构为 " + ua.cpu.architecture;
         function setLink(sourceId) {
-            document.getElementById("link").href = document.getElementById(sourceId).href;
-            document.getElementById("link").innerText = document.getElementById(sourceId).innerText;
-            document.getElementById("recommand").style.display = "initial";
+            //document.getElementById("link").href = document.getElementById(sourceId).href;
+            //document.getElementById("link").innerText = document.getElementById(sourceId).innerText;
+            $("#link").load("/python-list.html #"+sourceId);
         }
+        document.getElementById("tip").innerHTML = "检测到您正在在 " + ua.os.name + " 系统上使用 " + ua.browser.name + " " + ua.browser.major + " 浏览器，处理器架构为 " + ua.cpu.architecture;
         switch (ua.os.name) {
             case "Windows":
                 if (ua.os.version >= 6.3) {
@@ -98,7 +175,14 @@ make install</pre>
                 setLink("linux");
                 break;
         }
+    }
+
+    </script>
+    <script>
+        $(document).ready(function(){
+            $('#guload').load('/python-list.html');
+        })
+        getpage();
     </script>
 </body>
-
 </html>
