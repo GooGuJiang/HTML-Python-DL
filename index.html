@@ -156,7 +156,12 @@
             //document.getElementById("link").innerText = document.getElementById(sourceId).innerText;
             $("#link").load("./python-list.html #"+sourceId);
         }
-        document.getElementById("tip").innerHTML = "检测到您正在在 " + ua.os.name + " 系统上使用 " + ua.browser.name + " " + ua.browser.major + " 浏览器，处理器架构为 " + ua.cpu.architecture;
+        if(ua.cpu.architecture != undefined ){
+          getcpuu  = ua.cpu.architecture;
+        }else{
+          getcpuu  = "";
+        }
+        document.getElementById("tip").innerHTML = "检测到您正在使用 " + ua.os.name +" "+ getcpuu +" 系统";
         switch (ua.os.name) {
             case "Windows":
                 if (ua.os.version >= 6.3) {
