@@ -183,6 +183,30 @@
           });    
       });
     } 
+
+    function ardload(){
+      $(function(){    
+          $.ajax({      
+              type:"GET",    
+              url:"./list.json",    
+              dataType: "json",      
+              success: function(data){    
+                  var str="<section>";
+                  var json_len = data.length-1;  
+                  $.each(data,function(i,n){    
+                      str+="<h4>"+n.title+'<i class="'+n.icon+'" style="margin-left: 10px;font-size: 20px;margin-right: 10px;"></i></h4>';  
+                      str+=n.text;  
+                      str+='<span>下载链接：</span><a target="_blank" href="'+n.url+'"">'+n.dlname+"1"+'</a>';
+                      if(json_len != i){
+                        str+="<hr>";
+                      }
+                  }); 
+                  str+="</section>";    
+                  $("#loadjson").html(str);
+              }    
+          });    
+      });
+    } 
     </script> 
     <script>
         function getpage() {
@@ -223,6 +247,7 @@
                 setLink("linux");
                 break;
             default:
+            ardload()
               $("#link").html('<button style="margin:0 auto;" type="button" class="btn btn-danger btn-lg" disabled>不支持检测此系统<i style="margin:10px;" class="fas fa-exclamation-circle"></i></button>');
               break;
         }
