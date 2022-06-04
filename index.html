@@ -148,7 +148,8 @@
 
     <script src="./js/ua-parser.min.js"></script>
 
-    <script>    
+    <script>
+    function setLink(sourceId){
       $(function(){    
           $.ajax({      
               type:"GET",    
@@ -164,22 +165,25 @@
                       if(json_len != i){
                         str+="<hr>";
                       }
-                  });    
+                  }); 
                   str+="</section>";    
-                  $("#loadjson").html(str);    
+                  $("#loadjson").html(str);
+                  $.each(data,function(i,n){    
+                      if(n.os == sourceId){
+                        $("#link").html('<a id="win10x64" target="_blank" href="'+n.url+'"">'+n.dlname+'</a>');
+                      }
+                  }); 
+                  
               }    
           });    
-      });    
+      });
+    } 
     </script> 
     <script>
         function getpage() {
+        //load_os_link()
         var ua = UAParser();
         //console.log(ua);
-        function setLink(sourceId) {
-            //document.getElementById("link").href = document.getElementById(sourceId).href;
-            //document.getElementById("link").innerText = document.getElementById(sourceId).innerText;
-            $("#link").load("./python-list.html #"+sourceId);
-        }
         if(ua.cpu.architecture != undefined ){
           getcpuu  = ua.cpu.architecture;
         }else{
