@@ -94,16 +94,21 @@
                       <i class="fas fa-thumbs-up" style="margin: 10px;">
                       </i>推荐下载</h2>
                     <hr>
-                    <p id="tip" style="margin: 10px;">正在加载...</p>
-                    <div class="row">
-                      <p style="margin: 10px;margin-right: -30px;" >(如果检测不正确请在 全部下载 中寻找正确版本)</p>
+                    <div style="text-align: center;">
+                      <p id="tip">正在加载...</p>
+                      <p >(如果检测不正确请在 全部下载 中寻找正确版本)</p>
+                      <p>推荐您下载使用以下版本的 Python:</p>
+                      <div id="link"></div>
+                    </div>
+                    <!-- div class="row" >
+                      <p style="text-align: center;" >(如果检测不正确请在 全部下载 中寻找正确版本)</p>
                       <div class="col-md-auto">
-                        <p style="margin: 10px;margin-right: -30px;">推荐您下载使用以下版本的 Python:</p>
+                        <p style="text-align: center;">推荐您下载使用以下版本的 Python:</p>
                       </div>
-                      <div class="col-md-auto" style="margin: 10px;margin-top:2.5mm">
+                      <div class="col-md-auto" style="text-align: center;">
                         <a id="link" target="_blank">正在加载......</a>
                       </div>
-                    </div>
+                    </div -->
                     <div style="height: 10px;">
                     </div>
                   </section>
@@ -170,7 +175,7 @@
                   $("#loadjson").html(str);
                   $.each(data,function(i,n){    
                       if(n.os == sourceId){
-                        $("#link").html('<a id="win10x64" target="_blank" href="'+n.url+'"">'+n.dlname+'</a>');
+                        $("#link").html('<a target="_blank" href="'+n.url+'""><button style="margin:0 auto;" type="button" class="btn btn-success btn-lg">'+n.dlname+'<i style="margin:10px;" class="fas fa-arrow-alt-circle-down"></i></button></a>');
                       }
                   }); 
                   
@@ -189,7 +194,16 @@
         }else{
           getcpuu  = "";
         }
-        document.getElementById("tip").innerHTML = "检测到您正在使用 " + ua.os.name +" "+ getcpuu +" 系统";
+        var os_ouu = "";
+        switch (ua.os.name) {
+          case "Windows":
+        if (ua.os.version >= 6.3) {
+            var os_ouu = "10 或 以上版本 的 ";
+        } else{
+            var os_ouu = "7 或 以下版本 的 ";
+        }
+      }
+        document.getElementById("tip").innerHTML = "检测到您正在使用 <mark>" + ua.os.name +" "+ os_ouu + getcpuu +"</mark>系统";
         switch (ua.os.name) {
             case "Windows":
                 if (ua.os.version >= 6.3) {
