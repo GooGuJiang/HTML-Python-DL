@@ -97,7 +97,7 @@
                     <div style="text-align: center;">
                       <p id="tip">正在加载...</p>
                       <p >(如果检测不正确请在 全部下载 中寻找正确版本)</p>
-                      <p>推荐您下载使用以下版本的 Python:</p>
+                      <h5>推荐您下载使用以下版本的 Python:</h5>
                       <div id="link"></div>
                     </div>
                     <!-- div class="row" >
@@ -203,7 +203,7 @@
             var os_ouu = "7 或 以下版本 的 ";
         }
       }
-        document.getElementById("tip").innerHTML = "检测到您正在使用 <mark>" + ua.os.name +" "+ os_ouu + getcpuu +"</mark>系统";
+        document.getElementById("tip").innerHTML = "<h4>检测到您正在使用:</h4><h5> <mark> " + ua.os.name +" "+ os_ouu + getcpuu +" 系统</mark></h5>";
         switch (ua.os.name) {
             case "Windows":
                 if (ua.os.version >= 6.3) {
@@ -223,7 +223,7 @@
                 setLink("linux");
                 break;
             default:
-              $("#link").html("暂不支持检测此设备...");
+              $("#link").html('<button style="margin:0 auto;" type="button" class="btn btn-danger btn-lg" disabled>不支持检测此系统<i style="margin:10px;" class="fas fa-exclamation-circle"></i></button>');
               break;
         }
     }
