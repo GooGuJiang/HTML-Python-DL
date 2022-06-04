@@ -114,7 +114,7 @@
                     </i>全部下载</h2>
                   <hr>
                   <div class="gu-zhu text-muted" style="margin-top: -14px;margin-left: 10px;">
-                    <div id="guload">
+                    <div id="loadjson">
                         <div class="sk-circle" style="margin: 20px;">
                             <div class="sk-circle-dot"></div>
                             <div class="sk-circle-dot"></div>
@@ -147,6 +147,30 @@
 
 
     <script src="./js/ua-parser.min.js"></script>
+
+    <script>    
+      $(function(){    
+          $.ajax({      
+              type:"GET",    
+              url:"./list.json",    
+              dataType: "json",      
+              success: function(data){    
+                  var str="<section>";
+                  var json_len = data.length-1;  
+                  $.each(data,function(i,n){    
+                      str+="<h4>"+n.title+'<i class="'+n.icon+'" style="margin-left: 10px;font-size: 20px;margin-right: 10px;"></i></h4>';  
+                      str+=n.text;  
+                      str+='<span>下载链接：</span><a target="_blank" href="'+n.url+'"">'+n.dlname+"1"+'</a>';
+                      if(json_len != i){
+                        str+="<hr>";
+                      }
+                  });    
+                  str+="</section>";    
+                  $("#loadjson").html(str);    
+              }    
+          });    
+      });    
+    </script> 
     <script>
         function getpage() {
         var ua = UAParser();
@@ -188,9 +212,6 @@
 
     </script>
     <script>
-        $(document).ready(function(){
-            $('#guload').load('./python-list.html');
-        })
         getpage();
     </script>
 </body>
