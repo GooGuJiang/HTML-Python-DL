@@ -14,5 +14,30 @@
         "text":"<p>适用于 Windows 7 64 位 / 内存 4GB 及以上电脑使用</p>",
         "dlname":"python-3.8.10-amd64.exe",
         "url":"https://mirror.bjtu.edu.cn/python/3.8.10/python-3.8.10-amd64.exe"
+    },
+    {
+        "os":"win7x32",
+        "title":"Microsoft Windows 7 32 位",
+        "icon":"fab fa-windows",
+        "text":"<p>适用于 Windows 7 32 位 / 内存 2GB 及以下电脑使用</p>",
+        "dlname":"python-3.8.10.exe",
+        "url":"https://mirror.bjtu.edu.cn/python/3.8.10/python-3.8.10.exe"
+    },
+    {
+        "os":"apple",
+        "title":"Apple macOS Universal2",
+        "icon":"fab fa-apple",
+        "text":"<p>适用于 Apple MacBook (Air/Pro) / iMac / Mac mini / Mac Studio 等使用</p><p>Intel 芯片和 Apple M1 (Pro/Max/Ultra) 芯片 均可使用</p>        ",
+        "dlname":"python-3.10.4-macos11.pkg",
+        "url":"https://mirror.bjtu.edu.cn/python/3.10.4/python-3.10.4-macos11.pkg"
+    }
+    ,
+    {
+        "os":"linux",
+        "title":"GNU Linux",
+        "icon":"fab fa-linux",
+        "text":"<p>Python预装在大多数Linux发行版上，所以您大概率不需要单独安装。</p><p>如果您使用的发行版不自带Python，请查阅您使用的发行版的文档手册</p><p>如果您需要从源代码编译，请下载源代码，解压到目录后使用以下命令编译并安装。</p>",
+        "dlname":"Python-3.10.4.tar.xz",
+        "url":"https://mirror.bjtu.edu.cn/python/3.10.4/Python-3.10.4.tar.xz"
     }
 ]

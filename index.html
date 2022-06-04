@@ -161,7 +161,7 @@
               url:"./list.json",    
               dataType: "json",      
               success: function(data){    
-                  var str="<section>";
+                  var str="<div style='margin-right: 10px;'>";
                   var json_len = data.length-1;  
                   $.each(data,function(i,n){    
                       str+="<h4>"+n.title+'<i class="'+n.icon+'" style="margin-left: 10px;font-size: 20px;margin-right: 10px;"></i></h4>';  
@@ -171,7 +171,7 @@
                         str+="<hr>";
                       }
                   }); 
-                  str+="</section>";    
+                  str+="</div>";    
                   $("#loadjson").html(str);
                   $.each(data,function(i,n){    
                       if(n.os == sourceId){
@@ -196,7 +196,7 @@
                   $.each(data,function(i,n){    
                       str+="<h4>"+n.title+'<i class="'+n.icon+'" style="margin-left: 10px;font-size: 20px;margin-right: 10px;"></i></h4>';  
                       str+=n.text;  
-                      str+='<span>下载链接：</span><a target="_blank" href="'+n.url+'"">'+n.dlname+"1"+'</a>';
+                      str+='<span>下载链接：</span><a target="_blank" href="'+n.url+'"">'+n.dlname+" "+'</a>';
                       if(json_len != i){
                         str+="<hr>";
                       }
@@ -207,8 +207,6 @@
           });    
       });
     } 
-    </script> 
-    <script>
         function getpage() {
         //load_os_link()
         var ua = UAParser();
